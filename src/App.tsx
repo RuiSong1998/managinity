@@ -2,7 +2,6 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 
 import { RefineThemes, useNotificationProvider } from "@refinedev/antd";
 import { Authenticated, ErrorComponent, Refine } from "@refinedev/core";
-import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import routerProvider, {
   CatchAllNavigate,
   DocumentTitleHandler,
@@ -33,7 +32,6 @@ const App = () => {
     <BrowserRouter>
       <ConfigProvider theme={RefineThemes.Blue}>
         <AntdApp>
-          <DevtoolsProvider>
             <Refine
               routerProvider={routerProvider}
               dataProvider={dataProvider}
@@ -100,8 +98,6 @@ const App = () => {
               <UnsavedChangesNotifier />
               <DocumentTitleHandler />
             </Refine>
-            <DevtoolsPanel />
-          </DevtoolsProvider>
         </AntdApp>
       </ConfigProvider>
     </BrowserRouter>
